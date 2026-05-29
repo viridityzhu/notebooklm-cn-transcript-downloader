@@ -26,11 +26,15 @@
 
 ### 安装（加载已解压的扩展）
 
-1. 打开 Chrome，进入 `chrome://extensions`。
-2. 打开右上角的 **开发者模式**。
-3. 点击 **加载已解压的扩展程序**，选择本文件夹（`notebooklm-download-script-extension`）。
-4. 打开一个 NotebookLM 笔记本，点击某个音频来源，让它的文字转写显示出来。
-5. 点击来源标题旁边的蓝色 **Download .md** 按钮。
+本扩展未上架 Chrome 应用商店，需要用「加载已解压的扩展」方式安装。先获取代码：
+克隆本仓库，或在 [Releases](../../releases) 下载最新的 zip 并解压。
+
+1. 把扩展文件夹放在一个**固定位置**（之后请勿删除或移动，Chrome 会一直从这里加载扩展）。
+2. 打开 Chrome，进入 `chrome://extensions`。
+3. 打开右上角的 **开发者模式**。
+4. 点击 **加载已解压的扩展程序**，选择该文件夹。
+5. 打开一个 NotebookLM 笔记本，点击某个音频来源，让它的文字转写显示出来。
+6. 点击来源标题旁边的蓝色 **Download .md** 按钮。
 
 ### 文件说明
 
@@ -70,12 +74,17 @@ transcript, a blue **Download .md** button appears **next to the source title
 
 ### Install (load unpacked)
 
-1. Open Chrome and go to `chrome://extensions`.
-2. Turn on **Developer mode** (top-right toggle).
-3. Click **Load unpacked** and select this folder
-   (`notebooklm-download-script-extension`).
-4. Open a notebook on NotebookLM, click an audio source so its transcript shows.
-5. Click the blue **Download .md** button next to the source title.
+This extension is not on the Chrome Web Store, so install it as an unpacked
+extension. First get the code: clone this repo, or download the latest zip from
+[Releases](../../releases) and unzip it.
+
+1. Put the extension folder in a **permanent location** (don't delete or move it
+   afterwards — Chrome loads the extension from there).
+2. Open Chrome and go to `chrome://extensions`.
+3. Turn on **Developer mode** (top-right toggle).
+4. Click **Load unpacked** and select that folder.
+5. Open a notebook on NotebookLM, click an audio source so its transcript shows.
+6. Click the blue **Download .md** button next to the source title.
 
 ### Files
 
