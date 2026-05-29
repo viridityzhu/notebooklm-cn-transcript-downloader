@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Node (not used currently, but safe to ignore)
+node_modules/
+
+# Build artifacts / packaged extension
+*.zip
+*.crx
+*.pem

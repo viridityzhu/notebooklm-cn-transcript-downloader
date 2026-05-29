@@ -1,0 +1,39 @@
+#nlm-md-download-btn {
+  flex: 0 0 auto;
+  margin-left: 8px;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  font-family: "Google Sans", Roboto, system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #fff;
+  background: #1a73e8;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+#nlm-md-download-btn:hover {
+  background: #1765cc;
+}
+
+#nlm-md-download-btn:active {
+  transform: scale(0.97);
+}
+
+#nlm-md-download-btn[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#nlm-md-download-btn .nlm-md-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
