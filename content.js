@@ -56,7 +56,7 @@
 
   // Find the container holding the source transcript.
   //
-  // IMPORTANT: NotebookLM renders BOTH the open source's transcript AND every
+  // IMPORTANT: Gemini Notebook renders BOTH the open source's transcript AND every
   // chat response with <labs-tailwind-doc-viewer>, and the chat responses use
   // far more indexed citation spans than a raw transcript does. So we must NOT
   // pick "the viewer with the most spans" — that always selects the chat panel.
@@ -88,7 +88,7 @@
 
   // Build markdown text from the transcript container.
   //
-  // A NotebookLM audio transcript is rendered as a single block whose utterances
+  // A Gemini Notebook audio transcript is rendered as a single block whose utterances
   // are separated by runs of 2+ whitespace chars (one run per spoken turn). We
   // split on those runs to recover one paragraph per utterance, then strip the
   // inter-CJK spaces and convert Traditional -> Simplified.
@@ -117,7 +117,7 @@
         return processText(el.textContent.trim());
       }
     }
-    return "NotebookLM transcript";
+    return "Gemini Notebook transcript";
   }
 
   function sanitizeFilename(name) {
@@ -178,7 +178,15 @@
   function getTitleAnchor() {
     const sv = document.querySelector("source-viewer");
     if (!sv) return null;
-    return sv.querySelector(".source-title-container") || null;
+    const container = sv.querySelector(
+      ".source-title-container, [class*='source-title-container']"
+    );
+    if (container) return container;
+
+    // The renamed app no longer consistently wraps the title in the original
+    // exact class. Mount beside the title itself when that wrapper is absent.
+    const title = sv.querySelector(".source-title, [class*='source-title'], h1, h2");
+    return title ? title.parentElement : null;
   }
 
   function update() {
@@ -195,7 +203,7 @@
     }
   }
 
-  // NotebookLM is an Angular SPA; content renders/changes dynamically.
+  // Gemini Notebook is an Angular SPA; content renders/changes dynamically.
   const observer = new MutationObserver(() => {
     // Debounce via rAF to avoid thrashing.
     if (observer._queued) return;
